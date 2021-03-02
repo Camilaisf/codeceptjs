@@ -1,0 +1,22 @@
+{
+  "name": "codeceptjs-appium",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "android": "codeceptjs run --reporter mochawesome -c codecept.conf.js --override   ' {\"helpers\": {\"Appium\": { \"platform\": \"Android\", \"app\": \"/Users/camilafonseca/Projects/app-release.apk\", \"desiredCapabilities\" : {\"appPackage\": \"com.qazandoapp\",\"appActivity\": \"MainActivity\",\"deviceName\": \"pixel\",\"platform\": \"9\", \"automationName\":\"UiAutomator1\"} }}}'",
+    "ios": "codeceptjs run --reporter mochawesome -c codecept.conf.js --override  '{\"helpers\": {\"Appium\": { \"platform\": \"iOS\", \"app\": \"/Users/camilafonseca/Projects/qazandoapp.app\", \"desiredCapabilities\" : {\"automationName\": \"XCUITest\",\"deviceName\": \"iPhone 12 Pro Max\",\"platform\": \"14.3\",\"useNewWDA\": true} }}}' ",
+    "test": "npx codeceptjs run --steps"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "codeceptjs": "^2.6.5",
+    "mochawesome": "^6.2.2",
+    "node-random-name": "^1.0.1",
+    "webdriverio": "^6.12.1"
+  },
+  "devDependencies": {
+    "mocha": "^8.3.0"
+  }
+}
