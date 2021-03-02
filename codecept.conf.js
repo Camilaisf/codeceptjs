@@ -1,3 +1,4 @@
+const server = require('./server/server.js')
 exports.config = {
   output: './output',
   helpers: {
@@ -18,8 +19,12 @@ exports.config = {
     home_page: './pages/home_page.js'
   },
   mocha: {},
-  bootstrap: './server/server.js',
-  teardown: './server/server.js',
+  bootstrap: async () => {
+    await server.start();
+  },
+  teardown: async () => {
+    await server.stop();
+  },
   hooks: [],
   gherkin: {
     features: './features/*.feature',

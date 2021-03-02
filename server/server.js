@@ -1,9 +1,9 @@
 module.exports = {
-    bootstrap: function() {
+    start: function() {
         console.log('bootstrap no server,js')
     },
     
-    teardown: function () {
+    stop: function () {
         console.log('Teadown')
     }
 }
